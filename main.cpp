@@ -42,13 +42,15 @@ void writer(std::string compressed_data) {
         std::ofstream result_file (relative_file_path);
         if (result_file.is_open()){
             result_file << compressed_data;
-            result_file.flush();
             result_file.close();
         }
         else {
             std::cout << "Error!" << std::endl;
         }
         std::cout << "File has been written" << std::endl;
+    }
+    else {
+        std::cout << "File has not been written" << std::endl;
     }
 }
 
@@ -60,6 +62,14 @@ int main(int argc, char* argv[]) {
     }
 
     std::string file_path = argv[1];
+    std::string content;
+    int error;
+    std::tie(error, content) = read_file(file_path);
+    if (error != 0) {
+        std::cout << "Can't open file / Invalid file name!\n";
+        return 1;
+    }
+
     int choice;
     std::cout << "Choose action:\n";
     std::cout << "(enter the number):\n";
@@ -69,13 +79,6 @@ int main(int argc, char* argv[]) {
     std::cout << "4: Lzw decompression\n";
     std::cin >> choice;
 
-    std::string content;
-    int error;
-    std::tie(error, content) = read_file(file_path);
-    if (error != 0) {
-        std::cout << "Can't open file / Invalid file name!\n";
-        return 1;
-    }
 
     switch (choice) {
     case 1: {

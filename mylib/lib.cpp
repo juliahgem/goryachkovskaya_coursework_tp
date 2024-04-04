@@ -17,35 +17,31 @@ std::string Rle::compress(const std::string& input) {
         }
         letters += std::to_string(count);
         letters.push_back(input[j]);
+        letters += " ";
 
     }
     return letters;
 }
 
-bool alpha_or_space(const char c)
-{
-    return isalpha(c) || c == ' ';
-}
 
 std::string Rle::decompress(std::string& compressed)
 {
-    size_t i = 0;
-    size_t repeat;
-    std::string original;
-    while (i < compressed.length())
-    {
-        while (alpha_or_space(compressed[i]))
-            original.push_back(compressed[i++]);
+    std::string count = "";
+    std::string decompressed_data = "";
+    std::string token;
+    std::istringstream data(compressed);
 
-        repeat = 0;
-        while (isdigit(compressed[i]))
-            repeat = 10 * repeat + (compressed[i++] - '0');
-
-        auto char_to_unroll = compressed[i++];
-        while (repeat--)
-            original.push_back(char_to_unroll);
+    while (std::getline(data, token, ' ')) {
+        if (isdigit(token[0])) {
+            count += token[0];
+        }
+        int repeat = std::stoi(count);
+        for (int j = 0; j < repeat; j++) {
+            decompressed_data += token[1];
+        }
+        count = "";
     }
-    return original;
+    return decompressed_data;
 }
 
 
