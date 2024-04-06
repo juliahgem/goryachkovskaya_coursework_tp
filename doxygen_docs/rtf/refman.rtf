@@ -108,7 +108,7 @@
 {\info 
 {\title {\comment Compression Library }Compression Library}
 {\comment \'D1\'EE\'E7\'E4\'E0\'ED\'EE \'F1\'E8\'F1\'F2\'E5\'EC\'EE\'E9 doxygen1.9.2.}
-{\creatim \yr2024\mo4\dy4\hr21\min51\sec40}
+{\creatim \yr2024\mo4\dy6\hr17\min33\sec44}
 }\pard\plain 
 \sectd\pgnlcrm
 {\footer \s29\widctlpar\tqc\tx4320\tqr\tx8640\qr\adjustright \fs20\cgrid {\chpgn}}
@@ -121,7 +121,7 @@
 \par\par\par\par\par\par\par\par\par\par\par\par
 \pard\plain \s16\qc\sa60\widctlpar\outlinelevel1\adjustright \f1\cgrid 
 {\field\fldedit {\*\fldinst AUTHOR \\*MERGEFORMAT}{\fldrslt AUTHOR}}\par
-\'C2\'E5\'F0\'F1\'E8\'FF \par{\field\fldedit {\*\fldinst CREATEDATE \\*MERGEFORMAT}{\fldrslt \'D7\'F2 4 \'C0\'EF\'F0 2024 }}\par
+\'C2\'E5\'F0\'F1\'E8\'FF \par{\field\fldedit {\*\fldinst CREATEDATE \\*MERGEFORMAT}{\fldrslt \'D1\'E1 6 \'C0\'EF\'F0 2024 }}\par
 \page\page\vertalt
 \pard\plain 
 \s1\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs36\kerning36\cgrid \'CE\'E3\'EB\'E0\'E2\'EB\'E5\'ED\'E8\'E5\par
@@ -193,7 +193,7 @@ static std::string {\b compress} (const std::string &input)\par
 }\par
 }\par}
 \pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
-static std::string {\b decompress} (const std::string &input)\par
+static std::string {\b decompress} (const std::string &compressed)\par
 {
 \pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
 \'C4\'E5\'EA\'EE\'EC\'EF\'F0\'E5\'F1\'F1\'E8\'F0\'F3\'E5\'F2 \'F1\'F2\'F0\'EE\'EA\'F3, \'F1\'E6\'E0\'F2\'F3\'FE \'EC\'E5\'F2\'EE\'E4\'EE\'EC LZW. }{
@@ -245,7 +245,7 @@ std::string Lzw::compress (const std::string &  {\i input}){\f2 [static]}}}
 {\xe \v Lzw\:decompress}
 \pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
 {\b 
-std::string Lzw::decompress (const std::string &  {\i input}){\f2 [static]}}}
+std::string Lzw::decompress (const std::string &  {\i compressed}){\f2 [static]}}}
 \par
 {\bkmkstart AAAAAAAAAD}
 {\bkmkend AAAAAAAAAD}
@@ -263,7 +263,7 @@ std::string Lzw::decompress (const std::string &  {\i input}){\f2 [static]}}}
 \clvertalt\clbrdrt\brdrs\brdrw10\brdrcf15 \clbrdrl\brdrs\brdrw10\brdrcf15 \clbrdrb\brdrs\brdrw10\brdrcf15 \clbrdrr \brdrs\brdrw10\brdrcf15 \cltxlrtb \cellx2187
 \clvertalt\clbrdrt\brdrs\brdrw10\brdrcf15 \clbrdrl\brdrs\brdrw10\brdrcf15 \clbrdrb\brdrs\brdrw10\brdrcf15 \clbrdrr \brdrs\brdrw10\brdrcf15 \cltxlrtb \cellx8748
 \pard \widctlpar\intbl\adjustright
-{{\i input} \cell }{\'D1\'E6\'E0\'F2\'E0\'FF \'F1\'F2\'F0\'EE\'EA\'E0 \'E4\'EB\'FF \'E4\'E5\'EA\'EE\'EC\'EF\'F0\'E5\'F1\'F1\'E8\'E8. \cell }
+{{\i compressed} \cell }{\'D1\'E6\'E0\'F2\'E0\'FF \'F1\'F2\'F0\'EE\'EA\'E0 \'E4\'EB\'FF \'E4\'E5\'EA\'EE\'EC\'EF\'F0\'E5\'F1\'F1\'E8\'E8. \cell }
 {\row }
 }
 {{\s5\sb90\sa30\keepn\widctlpar\adjustright \b\f1\fs20\cgrid 
@@ -298,7 +298,7 @@ mylib/lib.cpp\par
 
 {
 \pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
-static std::string {\b compress} (const std::string &input_str)\par
+static std::string {\b compress} (const std::string &input)\par
 {
 \pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
 \'D1\'E6\'E8\'EC\'E0\'E5\'F2 \'E2\'F5\'EE\'E4\'ED\'F3\'FE \'F1\'F2\'F0\'EE\'EA\'F3 \'F1 \'E8\'F1\'EF\'EE\'EB\'FC\'E7\'EE\'E2\'E0\'ED\'E8\'E5\'EC \'EC\'E5\'F2\'EE\'E4\'E0 \'EA\'EE\'E4\'E8\'F0\'EE\'E2\'E0\'ED\'E8\'FF \'E4\'EB\'E8\'ED \'F1\'E5\'F0\'E8\'E9 (RLE). }{
@@ -328,7 +328,7 @@ static std::string {\b decompress} (std::string &compressed)\par
 {\xe \v Rle\:compress}
 \pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
 {\b 
-std::string Rle::compress (const std::string &  {\i input_str}){\f2 [static]}}}
+std::string Rle::compress (const std::string &  {\i input}){\f2 [static]}}}
 \par
 {\bkmkstart AAAAAAAAAF}
 {\bkmkend AAAAAAAAAF}
@@ -346,7 +346,7 @@ std::string Rle::compress (const std::string &  {\i input_str}){\f2 [static]}}}
 \clvertalt\clbrdrt\brdrs\brdrw10\brdrcf15 \clbrdrl\brdrs\brdrw10\brdrcf15 \clbrdrb\brdrs\brdrw10\brdrcf15 \clbrdrr \brdrs\brdrw10\brdrcf15 \cltxlrtb \cellx2187
 \clvertalt\clbrdrt\brdrs\brdrw10\brdrcf15 \clbrdrl\brdrs\brdrw10\brdrcf15 \clbrdrb\brdrs\brdrw10\brdrcf15 \clbrdrr \brdrs\brdrw10\brdrcf15 \cltxlrtb \cellx8748
 \pard \widctlpar\intbl\adjustright
-{{\i input_str} \cell }{\'C2\'F5\'EE\'E4\'ED\'E0\'FF \'F1\'F2\'F0\'EE\'EA\'E0 \'E4\'EB\'FF \'F1\'E6\'E0\'F2\'E8\'FF. \cell }
+{{\i input} \cell }{\'C2\'F5\'EE\'E4\'ED\'E0\'FF \'F1\'F2\'F0\'EE\'EA\'E0 \'E4\'EB\'FF \'F1\'E6\'E0\'F2\'E8\'FF. \cell }
 {\row }
 }
 {{\s5\sb90\sa30\keepn\widctlpar\adjustright \b\f1\fs20\cgrid 
@@ -404,7 +404,7 @@ lib.h\par \pard\plain
 2 \par
 6 {\cf17 class }Rle \{\par
 7 {\cf17 public}:\par
-13     {\cf17 static} std::string compress({\cf17 const} std::string& input_str);\par
+13     {\cf17 static} std::string compress({\cf17 const} std::string& input);\par
 14 \par
 20     {\cf17 static} std::string decompress(std::string& compressed);\par
 21 \};\par
@@ -413,7 +413,7 @@ lib.h\par \pard\plain
 27 {\cf17 public}:\par
 33     {\cf17 static} std::string compress({\cf17 const} std::string& input);\par
 34 \par
-40     {\cf17 static} std::string decompress({\cf17 const} std::string& input);\par
+40     {\cf17 static} std::string decompress({\cf17 const} std::string& compressed);\par
 41 \};\par
 }
 

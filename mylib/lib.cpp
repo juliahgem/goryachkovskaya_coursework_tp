@@ -75,7 +75,7 @@ std::string Lzw::compress(const std::string& input) {
     return compressed_data;
 }
 
-std::string Lzw::decompress(const std::string& input) {
+std::string Lzw::decompress(const std::string& compressed) {
     int maximum_table_size = 256;
     std::unordered_map<int, std::string> dictionary;
     std::string decompressed_data = "";
@@ -84,7 +84,7 @@ std::string Lzw::decompress(const std::string& input) {
         dictionary[i] = std::string(1, char(i));
     }
 
-    std::istringstream iss(input);
+    std::istringstream iss(compressed);
     std::string token;
     int next_code = 256;
     std::string string;

@@ -13,8 +13,6 @@ std::string path_input() {
 }
 
 // функция считывания содержимого файла
-// в качестве типа данных используется картеж из int и string
-// будем передавать код состояния 0 - успех, 1 - произошла ошибка и строку
 std::tuple<int, std::string> read_file(const std::string& path) {
     std::string line;
     std::ifstream fin(path);
@@ -71,8 +69,7 @@ int main(int argc, char* argv[]) {
     }
 
     int choice;
-    std::cout << "Choose action:\n";
-    std::cout << "(enter the number):\n";
+    std::cout << "Choose action (enter the number):\n";
     std::cout << "1: Rle compression\n";
     std::cout << "2: Rle decompression\n";
     std::cout << "3: Lzw compression\n";

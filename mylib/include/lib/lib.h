@@ -7,10 +7,10 @@ class Rle {
 public:
     /**
      * @brief Сжимает входную строку с использованием метода кодирования длин серий (RLE).
-     * @param input_str Входная строка для сжатия.
+     * @param input Входная строка для сжатия.
      * @return Сжатая строка, полученная методом RLE.
      */
-    static std::string compress(const std::string& input_str);
+    static std::string compress(const std::string& input);
 
     /**
      * @brief Декомпрессирует строку, сжатую методом RLE.
@@ -34,8 +34,8 @@ public:
 
     /**
      * @brief Декомпрессирует строку, сжатую методом LZW.
-     * @param input Сжатая строка для декомпрессии.
+     * @param compressed Сжатая строка для декомпрессии.
      * @return Декомпрессированная строка.
      */
-    static std::string decompress(const std::string& input);
+    static std::string decompress(const std::string& compressed);
 };
