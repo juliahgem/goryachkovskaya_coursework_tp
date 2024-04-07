@@ -12,10 +12,10 @@ find_package(Doxygen REQUIRED)
 
 add_subdirectory(mylib)
 
-add_executable(test_coursework main.cpp)
-target_link_libraries(test_coursework lib)
+add_executable(compression main.cpp)
+target_link_libraries(compression lib)
 
-install(TARGETS test_coursework RUNTIME
+install(TARGETS compression RUNTIME
   DESTINATION bin
 )
 
